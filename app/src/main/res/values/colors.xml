@@ -7,4 +7,8 @@
     <color name="colorBlack">#222222</color>
     <color name="colorBlueSoft">#3FABAF</color>
     <color name="colorGrey">#707070</color>
+
+    <color name="colorNavBar">#0D3745</color>
+    <color name="colorMerah">#BE2623</color>
+    <color name="colorBgCard">#EAE8DC</color>
 </resources>
