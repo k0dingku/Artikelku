@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
-import com.npe.artikelku.methodInterface.LoginResultCallbacks;
+import com.npe.artikelku.presenter.LoginResultCallbacks;
 
 public class LoginViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     private LoginResultCallbacks loginResultCallbacks;

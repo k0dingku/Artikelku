@@ -2,7 +2,17 @@ package com.npe.artikelku.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class LoginModel {
+    @SerializedName("api_status")
+    int api_status;
+    @SerializedName("api_message")
+    String api_message;
+    @SerializedName("api_response_fields")
+    List<String> api_response_fields;
+    @SerializedName("api_authorization")
+    String api_authorization;
     @SerializedName("id")
     String id;
     @SerializedName("nama")
@@ -23,7 +33,11 @@ public class LoginModel {
     public LoginModel() {
     }
 
-    public LoginModel(String id, String nama, String email, String noHp, String gender, String bank, String nomor_rekening, String nama_rekening) {
+    public LoginModel(int api_status, String api_message, List<String> api_response_fields, String api_authorization, String id, String nama, String email, String noHp, String gender, String bank, String nomor_rekening, String nama_rekening) {
+        this.api_status = api_status;
+        this.api_message = api_message;
+        this.api_response_fields = api_response_fields;
+        this.api_authorization = api_authorization;
         this.id = id;
         this.nama = nama;
         this.email = email;
@@ -32,6 +46,38 @@ public class LoginModel {
         this.bank = bank;
         this.nomor_rekening = nomor_rekening;
         this.nama_rekening = nama_rekening;
+    }
+
+    public int getApi_status() {
+        return api_status;
+    }
+
+    public void setApi_status(int api_status) {
+        this.api_status = api_status;
+    }
+
+    public String getApi_message() {
+        return api_message;
+    }
+
+    public void setApi_message(String api_message) {
+        this.api_message = api_message;
+    }
+
+    public List<String> getApi_response_fields() {
+        return api_response_fields;
+    }
+
+    public void setApi_response_fields(List<String> api_response_fields) {
+        this.api_response_fields = api_response_fields;
+    }
+
+    public String getApi_authorization() {
+        return api_authorization;
+    }
+
+    public void setApi_authorization(String api_authorization) {
+        this.api_authorization = api_authorization;
     }
 
     public String getId() {

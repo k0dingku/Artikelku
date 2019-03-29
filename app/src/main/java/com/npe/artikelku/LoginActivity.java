@@ -1,13 +1,15 @@
 package com.npe.artikelku;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.npe.artikelku.databinding.ActivityLoginBinding;
-import com.npe.artikelku.methodInterface.LoginResultCallbacks;
+import com.npe.artikelku.model.LoginModel;
+import com.npe.artikelku.presenter.LoginResultCallbacks;
 import com.npe.artikelku.viewmodel.LoginViewModel;
 import com.npe.artikelku.viewmodel.LoginViewModelFactory;
 
@@ -22,6 +24,15 @@ public class LoginActivity extends AppCompatActivity implements LoginResultCallb
         activityLoginBinding.setLoginViewModel(ViewModelProviders.of(this, new LoginViewModelFactory(this)).get(LoginViewModel.class));
     }
 
+
+    @Override
+    public void mainAcitivity() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     public void onSuccess(String msg) {

@@ -42,8 +42,10 @@ public class RequestLogin extends BaseObservable {
             return 0;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches()) {
             return 1;
-        } else if (getPassword().length() < 6) {
+        } else if (TextUtils.isEmpty(getPassword())) {
             return 2;
+        } else if (getPassword().length() < 6) {
+            return 3;
         } else {
             return -1;
         }
