@@ -1,14 +1,24 @@
 package com.npe.artikelku;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
+
+import com.npe.artikelku.Fragment.ArtikelFragment;
+import com.npe.artikelku.Fragment.DompetFragment;
+import com.npe.artikelku.Fragment.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigationView);
@@ -30,5 +41,37 @@ public class MainActivity extends AppCompatActivity {
             layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 46, displayMetrics);
             iconView.setLayoutParams(layoutParams);
         }
+
+        Fragment fragment = new ArtikelFragment();
+        loadFragment(fragment);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                Fragment fragment;
+                switch (menuItem.getItemId()){
+                    case R.id.artikel:
+                        fragment = new ArtikelFragment();
+                        loadFragment(fragment);
+                        return true;
+                    case R.id.dompet:
+                        fragment = new DompetFragment();
+                        loadFragment(fragment);
+                        return true;
+                    case R.id.profile:
+                        fragment = new ProfileFragment();
+                        loadFragment(fragment);
+                        return true;
+                }
+                return false;
+            }
+        });
+    }
+
+    private void loadFragment(Fragment fragment){
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main_frame, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }
