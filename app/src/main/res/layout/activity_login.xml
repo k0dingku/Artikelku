@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="loginViewModel"
-            type="com.npe.artikelku.viewmodel.LoginViewModel"/>
+            type="com.npe.artikelku.viewmodel.LoginViewModel" />
     </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,7 +19,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorBlack"
+            android:background="@color/colorWhite"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -29,22 +30,24 @@
                 android:text="@string/app_name"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorGreen"
+                android:textSize="39sp" />
+
 
             <EditText
                 android:id="@+id/etEmailLogin"
                 android:layout_width="@dimen/etWidth"
                 android:layout_height="@dimen/etHeight"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:background="@color/colorGrey"
                 android:drawableLeft="@drawable/ic_email"
                 android:ems="10"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
-                android:textColorHint="@android:color/white"
-                app:addTextChangedListener="@{loginViewModel.getEmailTextWatcher}"
-                />
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:addTextChangedListener="@{loginViewModel.getEmailTextWatcher}" />
+
 
             <EditText
                 android:id="@+id/etPasswordLogin"
@@ -55,30 +58,29 @@
                 android:drawableLeft="@drawable/ic_lock"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:textColorHint="@android:color/white"
-
-                app:addTextChangedListener="@{loginViewModel.getPasswordTextWatcher}"
-                />
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:addTextChangedListener="@{loginViewModel.getPasswordTextWatcher}" />
 
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="@dimen/btnWidth"
                 android:layout_height="@dimen/btnheight"
                 android:layout_marginTop="30dp"
-                android:background="@color/colorBlueSoft"
+                android:background="@color/colorGreen"
                 android:fontFamily="@font/montserrat_regular"
+                android:onClick="@{loginViewModel::onLoginClick}"
                 android:text="@string/login"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:onClick="@{loginViewModel::onLoginClick}"
                 android:textColor="@android:color/white" />
         </LinearLayout>
 
         <ProgressBar
-            android:visibility="gone"
             android:id="@+id/pbLogin"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
     </RelativeLayout>
 </layout>
 
