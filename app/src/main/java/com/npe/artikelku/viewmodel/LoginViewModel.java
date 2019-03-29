@@ -1,29 +1,73 @@
 package com.npe.artikelku.viewmodel;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-import android.util.Log;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
 
-import com.npe.artikelku.model.LoginModel;
-import com.npe.artikelku.respositories.LoginRepository;
+import com.npe.artikelku.methodInterface.LoginResultCallbacks;
+import com.npe.artikelku.model.RequestLogin;
 
 public class LoginViewModel extends ViewModel {
-    private MutableLiveData<LoginModel> mLoginModel;
-    private LoginRepository loginRepository;
+    private RequestLogin requestLogin;
+    private LoginResultCallbacks loginResultCallbacks;
 
-    public void init(String email, String password) {
-        if (mLoginModel != null) {
-            Log.i("LoginViewModel", "LoginDataAda");
-            return;
+
+    public LoginViewModel(LoginResultCallbacks loginResultCallbacks){
+        this.loginResultCallbacks = loginResultCallbacks;
+        this.requestLogin = new RequestLogin();
+    }
+
+    //get email dan pass from et
+    public TextWatcher getEmailTextWatcher(){
+        return new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                requestLogin.setEmail(s.toString());
+            }
+        };
+    }
+    public TextWatcher getPasswordTextWatcher(){
+        return new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                requestLogin.setPassword(s.toString());
+            }
+        };
+    }
+
+    //proses login
+    public void onLoginClick(View view){
+        int errorCode = requestLogin.isValidData();
+        if(errorCode == -1){
+            loginResultCallbacks.onSuccess("Login Success");
+        } else if(errorCode == 0) {
+            loginResultCallbacks.onFailed("Empety email");
+        } else if(errorCode == 1){
+            loginResultCallbacks.onFailed("Email not valid");
+        } else if( errorCode == 2){
+            loginResultCallbacks.onFailed("pasword must more than 6 character");
         }
-
-        loginRepository = LoginRepository.getInstance();
-        loginRepository.initRetrofit();
-        mLoginModel = loginRepository.getDataLogin(email,password);
     }
 
-    public LiveData<LoginModel> getLoginData(){
-        return mLoginModel;
-    }
 }

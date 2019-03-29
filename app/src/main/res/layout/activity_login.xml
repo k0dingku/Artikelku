@@ -1,62 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-
-    <LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.npe.artikelku.viewmodel.LoginViewModel"/>
+    </data>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBlack"
-        android:gravity="center"
-        android:orientation="vertical">
+        tools:context=".LoginActivity">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_extrabold"
-            android:text="@string/app_name"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textColor="@android:color/white" />
+            android:layout_height="match_parent"
+            android:background="@color/colorBlack"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etEmailLogin"
-            android:layout_width="@dimen/etWidth"
-            android:layout_height="@dimen/etHeight"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorGrey"
-            android:drawableLeft="@drawable/ic_email"
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@android:color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/white" />
 
-        <EditText
-            android:id="@+id/etPasswordLogin"
-            android:layout_width="@dimen/etWidth"
-            android:layout_height="@dimen/etHeight"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorGrey"
-            android:drawableLeft="@drawable/ic_lock"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:textColorHint="@android:color/white" />
+            <EditText
+                android:id="@+id/etEmailLogin"
+                android:layout_width="@dimen/etWidth"
+                android:layout_height="@dimen/etHeight"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGrey"
+                android:drawableLeft="@drawable/ic_email"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@android:color/white"
+                app:addTextChangedListener="@{loginViewModel.getEmailTextWatcher}"
+                />
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="@dimen/btnWidth"
-            android:layout_height="@dimen/btnheight"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorBlueSoft"
-            android:fontFamily="@font/montserrat_regular"
-            android:text="@string/login"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@android:color/white" />
+            <EditText
+                android:id="@+id/etPasswordLogin"
+                android:layout_width="@dimen/etWidth"
+                android:layout_height="@dimen/etHeight"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorGrey"
+                android:drawableLeft="@drawable/ic_lock"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColorHint="@android:color/white"
+                app:addTextChangedListener="@{loginViewModel.getPasswordTextWatcher}"
+                />
 
-    </LinearLayout>
-</RelativeLayout>
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="@dimen/btnWidth"
+                android:layout_height="@dimen/btnheight"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorBlueSoft"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/login"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:onClick="@{loginViewModel::onLoginClick}"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/pbLogin"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</layout>
+
 
