@@ -34,8 +34,7 @@ public class ArtikelFragment extends Fragment {
     }
 
     ArrayList<ArtikelModel> artikelModels;
-
-
+    String posOld;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +47,7 @@ public class ArtikelFragment extends Fragment {
         addData();
 
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view_artikelList);
-        ArtikelAdapter artikelAdapter = new ArtikelAdapter(artikelModels, getContext());
+        final ArtikelAdapter artikelAdapter = new ArtikelAdapter(artikelModels, getContext());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(artikelAdapter);
@@ -56,32 +55,25 @@ public class ArtikelFragment extends Fragment {
         artikelAdapter.setOnClickListener(new ArtikelAdapter.onClickListener() {
 
             @Override
-            public void onItemClick(View view, LinearLayout child,
+            public void onItemClick(View view, ArrayList<ArtikelModel> models,LinearLayout child,
                                     ImageView expand, int size, int pos) {
 
 
-//                Log.i("DataKuu", "POS : " + String.valueOf(pos) +
-//                        " Index : " + String.valueOf(i));
-
-                if (child.getVisibility() == View.VISIBLE) {
-                    child.setVisibility(View.GONE);
-                    expand.setRotation(0);
-                } else if (child.getVisibility() == View.GONE) {
-                    child.setVisibility(View.VISIBLE);
-                    expand.setRotation(180);
+                for (int i=0;i<size;i++){
+                    if (pos==i){
+                        if (models.get(i).isExpand()){
+                            models.get(i).collapse();
+                        }
+                        else {
+                            models.get(i).expanded();
+                        }
+                        continue;
+                    }
+                    models.get(i).collapse();
                 }
-                
 
-//                if(child.getVisibility() == View.VISIBLE){
-//                    child.setVisibility(View.GONE);
-//                    expand.setRotation(0);
-//                } else if(child.getVisibility() == View.GONE){
-//                    child.setVisibility(View.VISIBLE);
-//                    expand.setRotation(180);
-//                }
             }
         });
-
 
         return v;
     }
