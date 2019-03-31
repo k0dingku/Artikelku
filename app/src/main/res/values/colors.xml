@@ -11,4 +11,6 @@
     <color name="colorNavBar">#0D3745</color>
     <color name="colorMerah">#BE2623</color>
     <color name="colorBgCard">#EAE8DC</color>
+
+    <color name="colorBG">#F3F2ED</color>
 </resources>

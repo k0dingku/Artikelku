@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.ArtikelFragment">
+    tools:context=".Fragment.ArtikelFragment"
+    android:background="@color/colorBG">
 
 
     <SearchView
@@ -14,7 +15,6 @@
         android:layout_marginTop="15dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:alpha="0.3"
         android:background="@drawable/background_search_view">
     </SearchView>
 
@@ -23,6 +23,7 @@
         android:layout_below="@id/search_view_artikel"
         android:id="@+id/recycler_view_artikelList"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
