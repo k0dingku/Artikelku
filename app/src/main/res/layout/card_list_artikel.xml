@@ -81,7 +81,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Tanggal Unggah"/>
+                    android:text="@string/tglUnggah"/>
 
                 <TextView
                     android:id="@+id/tv_tanggal_unggah"
@@ -100,7 +100,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Status"/>
+                    android:text="@string/status"/>
 
                 <TextView
                     android:id="@+id/tv_status"
@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
-                    android:text="04/03/2019"/>
+                    android:text="proses"/>
             </LinearLayout>
 
 

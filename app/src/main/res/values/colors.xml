@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#0D3745</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
@@ -12,5 +12,6 @@
     <color name="colorMerah">#BE2623</color>
     <color name="colorBgCard">#EAE8DC</color>
 
-    <color name="colorBG">#F3F2ED</color>
+    <color name="colorBG">#00F3F2ED</color>
+    <color name="colorFontWhite">#F3F2ED</color>
 </resources>

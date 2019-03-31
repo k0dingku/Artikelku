@@ -6,4 +6,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="ganti_password">Ganti Password</string>
+    <string name="edit_rekening">Edit Rekening</string>
+    <string name="syarat_ketentuan">Syarat dan Ketentuan</string>
+    <string name="logout">Logout</string>
+    <string name="tglUnggah">Tanggal Unggah</string>
+    <string name="status">Status</string>
+    <string name="edit_nama">Nama</string>
+    <string name="edit_email">Edit Email</string>
+    <string name="edit_nomor">Nomor Hp</string>
+    <string name="btnSimpan">Simpan</string>
+
 </resources>

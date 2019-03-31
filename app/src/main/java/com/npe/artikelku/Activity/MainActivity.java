@@ -1,4 +1,4 @@
-package com.npe.artikelku;
+package com.npe.artikelku.Activity;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -19,6 +19,7 @@ import android.widget.Switch;
 import com.npe.artikelku.Fragment.ArtikelFragment;
 import com.npe.artikelku.Fragment.DompetFragment;
 import com.npe.artikelku.Fragment.ProfileFragment;
+import com.npe.artikelku.R;
 
 public class MainActivity extends AppCompatActivity {
 
