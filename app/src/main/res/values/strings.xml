@@ -6,4 +6,23 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="nama_bank">
+        <item>Mandiri</item>
+        <item>BCA</item>
+        <item>BNI</item>
+        <item>BRI</item>
+    </string-array>
+    
+    <string name="ketentuan_pencairan">Ketentuan pencairan dana</string>
+    <string name="minimum_pencairan">- Minimum pencairan dana adalah Rp 100.000,00</string>
+    <string name="lama_pencairan">- Lama pencairan saldo maksimal 2 hari</string>
+    <string name="pencairan_dana">- Pencairan dana hanya bisa dilakukan 1 kali per hari</string>
+    <string name="masuk_noRekening">Masukkan nomor rekening</string>
+    <string name="jumlah_nominal">Jumlah pencairan</string>
+    <string name="masuk_atasNama">Masukkan nama pemilik rekening</string>
+    <string name="pilih_bank">Pilih bank tujuan</string>
+    <string name="rekening_tujuan">Rekening Tujuan</string>
+    <string name="bank_tujuan">Bank tujuan</string>
+    <string name="no_rek">Nomor rekening</string>
+    <string name="atas_nama">Atas nama</string>
 </resources>

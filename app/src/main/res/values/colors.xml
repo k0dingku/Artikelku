@@ -13,4 +13,5 @@
     <color name="colorBgCard">#EAE8DC</color>
 
     <color name="colorBG">#F3F2ED</color>
+    <color name="colorWhite">#ffffff</color>
 </resources>
