@@ -1,19 +1,21 @@
 package com.npe.artikelku.rest;
 
+import com.npe.artikelku.utils.Constant;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    public static final String BASE_URL = "http://artikelku.kodingku.net/api/";
-    public static Retrofit retrofit = null;
+    private static Retrofit.Builder retfotitBuilder =
+            new Retrofit.Builder()
+                    .baseUrl(Constant.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create());
 
-    public static Retrofit getClient(){
-        if(retrofit == null){
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-        return retrofit;
+    private static Retrofit retrofit = retfotitBuilder.build();
+    private static ApiInterface apiInterface = retrofit.create(ApiInterface.class);
+
+    public static ApiInterface getApiInterface() {
+        return apiInterface;
     }
+
 }

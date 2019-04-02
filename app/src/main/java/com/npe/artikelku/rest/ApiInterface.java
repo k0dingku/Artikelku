@@ -2,6 +2,7 @@ package com.npe.artikelku.rest;
 
 import com.npe.artikelku.model.LoginModel;
 import com.npe.artikelku.model.RequestLogin;
+import com.npe.artikelku.utils.Constant;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -11,6 +12,6 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
     @FormUrlEncoded
-    @POST("pengguna_login")
+    @POST(Constant.PENGGUNA_LOGIN)
     Call<LoginModel> getDataLogin(@Field("email") String email, @Field("password") String password);
 }

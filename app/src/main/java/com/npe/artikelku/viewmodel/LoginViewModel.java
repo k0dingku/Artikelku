@@ -23,8 +23,6 @@ import retrofit2.Retrofit;
 public class LoginViewModel extends ViewModel {
     private RequestLogin requestLogin;
     private LoginResultCallbacks loginResultCallbacks;
-    private Retrofit retrofit;
-    private ApiInterface service;
     private ProgressDialog progressDialog;
 
     public LoginViewModel(LoginResultCallbacks loginResultCallbacks) {
@@ -108,17 +106,11 @@ public class LoginViewModel extends ViewModel {
         progressDialog.setCanceledOnTouchOutside(false);
     }
 
-    //init retrofit
-    private void initRetrofit() {
-        retrofit = ApiClient.getClient();
-        service = retrofit.create(ApiInterface.class);
-    }
 
     //proses login
     public void sendLoginRequest() {
-        initRetrofit();
 
-        service.getDataLogin(requestLogin.getEmail(), requestLogin.getPassword()).enqueue(new Callback<LoginModel>() {
+        ApiClient.getApiInterface().getDataLogin(requestLogin.getEmail(), requestLogin.getPassword()).enqueue(new Callback<LoginModel>() {
             @Override
             public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
                 if (response.body() != null) {
