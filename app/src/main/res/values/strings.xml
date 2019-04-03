@@ -17,5 +17,12 @@
     <string name="edit_email">Edit Email</string>
     <string name="edit_nomor">Nomor Hp</string>
     <string name="btnSimpan">Simpan</string>
+    <string name="edit_password_lama">Password lama</string>
+    <string name="edit_password_baru">Password baru</string>
+    <string name="edit_ulangiPasswordBaru">Ulangi password baru</string>
+    <string name="btnGanti">ganti</string>
+    <string name="edit_nama_bank">Nama bank</string>
+    <string name="edit_nomor_rekening">Nomor rekening</string>
+    <string name="edit_namaPemilikRekening">Nama pemilik rekening</string>
 
 </resources>

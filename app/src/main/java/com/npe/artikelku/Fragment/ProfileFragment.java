@@ -10,7 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.npe.artikelku.Activity.EditProfileActivity;
+import com.npe.artikelku.Activity.EditRekeningActivity;
+import com.npe.artikelku.Activity.GantiPasswordActivity;
 import com.npe.artikelku.R;
+import com.npe.artikelku.presenter.EditRekeningResultCallbacks;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,6 +37,24 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        CardView gantiProfile = (CardView) v.findViewById(R.id.card_gantiPassword_profileFragment);
+        gantiProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), GantiPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        CardView editRekening = (CardView) v.findViewById(R.id.card_editRekening_proflieFragment);
+        editRekening.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), EditRekeningActivity.class);
                 startActivity(intent);
             }
         });

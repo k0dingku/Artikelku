@@ -1,41 +1,36 @@
 package com.npe.artikelku.Activity;
 
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.npe.artikelku.R;
-import com.npe.artikelku.presenter.EditProfileResultCallbacks;
+import com.npe.artikelku.presenter.GantiPasswordResultCallbacks;
 
 import es.dmoral.toasty.Toasty;
 
-public class EditProfileActivity extends AppCompatActivity implements EditProfileResultCallbacks {
+public class GantiPasswordActivity extends AppCompatActivity implements GantiPasswordResultCallbacks {
 
-    Button simpan;
+    Button ganti;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_ganti_password);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left);
-        getSupportActionBar().setTitle("Edit Profile");
+        getSupportActionBar().setTitle("Ganti Password");
 
+        ganti = findViewById(R.id.btn_gantiPassword);
 
-
-        simpan = findViewById(R.id.btn_simpan_editProfile);
-
-        simpan.setOnClickListener(new View.OnClickListener() {
+        ganti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onSucces("Data anda berhasil diubah");
+                onSucces("Password andah telah diganti");
             }
         });
 
@@ -50,7 +45,6 @@ public class EditProfileActivity extends AppCompatActivity implements EditProfil
         }
         return true;
     }
-
 
     @Override
     public void onBackPressed() {
