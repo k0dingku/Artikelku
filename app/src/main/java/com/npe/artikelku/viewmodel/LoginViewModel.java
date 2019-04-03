@@ -1,32 +1,29 @@
 package com.npe.artikelku.viewmodel;
 
 import android.app.ProgressDialog;
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.ViewGroup;
 
-import com.npe.artikelku.R;
 import com.npe.artikelku.model.LoginModel;
 import com.npe.artikelku.model.RequestLogin;
 import com.npe.artikelku.presenter.LoginResultCallbacks;
-import com.npe.artikelku.rest.ApiClient;
-import com.npe.artikelku.rest.ApiInterface;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
+import com.npe.artikelku.respositories.LoginRepository;
+import com.npe.artikelku.utils.Constant;
 
 public class LoginViewModel extends ViewModel {
     private RequestLogin requestLogin;
     private LoginResultCallbacks loginResultCallbacks;
+    private LoginRepository loginRepository;
+    private LiveData<LoginModel> dataLogin = new MutableLiveData<>();
     private ProgressDialog progressDialog;
 
     public LoginViewModel(LoginResultCallbacks loginResultCallbacks) {
         this.loginResultCallbacks = loginResultCallbacks;
+        loginRepository = LoginRepository.getInstance();
         this.requestLogin = new RequestLogin();
     }
 
@@ -74,10 +71,7 @@ public class LoginViewModel extends ViewModel {
         int errorCode = requestLogin.isValidData();
         if (errorCode == -1) {
             //progress dialog
-            dialogWait(view);
-
-            //show progress
-            progressDialog.show();
+            progressDialog = Constant.getDialog(view.getContext());
 
             //send and get login data
             sendLoginRequest();
@@ -92,50 +86,23 @@ public class LoginViewModel extends ViewModel {
         }
     }
 
-    private void dialogWait(View view) {
-        progressDialog = new ProgressDialog(view.getContext(), R.style.FullScreen){
-            @Override
-            protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                setContentView(R.layout.progress_dialog);
-                getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            }
-        };
-
-        progressDialog.setCancelable(false);
-        progressDialog.setCanceledOnTouchOutside(false);
-    }
-
 
     //proses login
-    public void sendLoginRequest() {
+    private void sendLoginRequest() {
+        String email = requestLogin.getEmail().trim();
+        String pass = requestLogin.getPassword().trim();
+        //login request
+        dataLogin = loginRepository.loginUser(email, pass);
 
-        ApiClient.getApiInterface().getDataLogin(requestLogin.getEmail(), requestLogin.getPassword()).enqueue(new Callback<LoginModel>() {
-            @Override
-            public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
-                if (response.body() != null) {
-                    //init data login model
-                    if (response.body().getApi_status() == 1) {
-                        initDataUser(response.body());
-                        loginResultCallbacks.mainAcitivity();
-                    } else if(response.body().getApi_status() == 0){
-                        progressDialog.dismiss();
-                        loginResultCallbacks.onFailed("Username or password invalid. Please try again");
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<LoginModel> call, Throwable t) {
-                progressDialog.dismiss();
-                loginResultCallbacks.onFailed("Failed Login");
-            }
-        });
-
-    }
-
-    private void initDataUser(LoginModel body) {
-        progressDialog.dismiss();
-        loginResultCallbacks.onSuccess("Login Success Email : " + String.valueOf(body.getEmail()));
+        //show progress
+        progressDialog.show();
+        if (dataLogin != null) {
+            progressDialog.dismiss();
+            loginResultCallbacks.onSuccess("Berhasil Login");
+            loginResultCallbacks.mainAcitivity();
+        } else {
+            progressDialog.dismiss();
+            loginResultCallbacks.onFailed("Gagal Login");
+        }
     }
 }

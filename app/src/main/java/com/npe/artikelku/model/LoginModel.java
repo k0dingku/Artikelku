@@ -1,33 +1,46 @@
 package com.npe.artikelku.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 public class LoginModel {
     @SerializedName("api_status")
+    @Expose
     int api_status;
     @SerializedName("api_message")
+    @Expose
     String api_message;
     @SerializedName("api_response_fields")
+    @Expose
     List<String> api_response_fields;
     @SerializedName("api_authorization")
+    @Expose
     String api_authorization;
     @SerializedName("id")
+    @Expose
     String id;
     @SerializedName("nama")
+    @Expose
     String nama;
     @SerializedName("email")
+    @Expose
     String email;
     @SerializedName("noHp")
+    @Expose
     String noHp;
     @SerializedName("gender")
+    @Expose
     String gender;
     @SerializedName("bank")
+    @Expose
     String bank;
     @SerializedName("nomor_rekening")
+    @Expose
     String nomor_rekening;
     @SerializedName("nama_rekening")
+    @Expose
     String nama_rekening;
 
     public LoginModel() {
