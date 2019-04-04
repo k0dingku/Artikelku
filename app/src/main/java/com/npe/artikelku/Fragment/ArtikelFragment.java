@@ -57,8 +57,6 @@ public class ArtikelFragment extends Fragment {
             @Override
             public void onItemClick(View view, ArrayList<ArtikelModel> models,LinearLayout child,
                                     ImageView expand, int size, int pos) {
-
-
                 for (int i=0;i<size;i++){
                     if (pos==i){
                         if (models.get(i).isExpand()){

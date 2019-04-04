@@ -12,7 +12,7 @@
         <item>BNI</item>
         <item>BRI</item>
     </string-array>
-    
+
     <string name="ketentuan_pencairan">Ketentuan pencairan dana</string>
     <string name="minimum_pencairan">- Minimum pencairan dana adalah Rp 100.000,00</string>
     <string name="lama_pencairan">- Lama pencairan saldo maksimal 2 hari</string>
@@ -25,4 +25,10 @@
     <string name="bank_tujuan">Bank tujuan</string>
     <string name="no_rek">Nomor rekening</string>
     <string name="atas_nama">Atas nama</string>
+    <string name="masukkan_password">Masukkan Password Artikelku</string>
+    <string name="masukkan_password_2">password yang dimasukkan adalah password Artikelku, bukan password rekening anda</string>
+    <string name="lupa_password">Lupa password?</string>
+    <string name="uang_diproses">Uang anda akan segera kami proses, tunggu ya 😊</string>
+    <string name="masukkan_email">Masukkan Email</string>
+    <string name="password_dikirim">password baru akan dikirimkan ke email anda</string>
 </resources>
