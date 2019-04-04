@@ -23,6 +23,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_regular"
                     android:text="Fachril Zulfidar"
                     android:textColor="#fff"
                     android:padding="10dp"
@@ -34,9 +35,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_regular"
                     android:text="Rp 150.000,00"
                     android:textColor="#fff"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                      />
             </LinearLayout>
 
@@ -48,7 +50,9 @@
             android:layout_height="wrap_content"
             app:tabGravity="fill"
             app:tabMode="fixed"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
             app:tabTextColor="@color/colorBlack"
+            app:tabSelectedTextColor="@color/colorWhite"
             android:background="@color/colorMerah"
             app:tabIndicator="@color/colorWhite"
             android:textAllCaps="false"
