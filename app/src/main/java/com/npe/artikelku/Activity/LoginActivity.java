@@ -1,4 +1,4 @@
-package com.npe.artikelku;
+package com.npe.artikelku.Activity;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.npe.artikelku.R;
 import com.npe.artikelku.databinding.ActivityLoginBinding;
 import com.npe.artikelku.model.LoginModel;
 import com.npe.artikelku.model.user.UserModel;

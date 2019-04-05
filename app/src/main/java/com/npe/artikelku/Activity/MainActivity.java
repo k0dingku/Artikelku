@@ -1,4 +1,4 @@
-package com.npe.artikelku;
+package com.npe.artikelku.Activity;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.npe.artikelku.R;
 import com.npe.artikelku.model.user.UserModel;
 import com.npe.artikelku.viewmodel.UserViewModel;
 
