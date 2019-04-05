@@ -13,7 +13,7 @@ public class Constant {
     public static final int NETWORK_TIMEOUT = 3000;
 
 
-    public static ProgressDialog getDialog(Context context){
+    public static ProgressDialog getDialog(Context context) {
         ProgressDialog progressDialog = new ProgressDialog(context, R.style.FullScreen) {
             @Override
             protected void onCreate(Bundle savedInstanceState) {

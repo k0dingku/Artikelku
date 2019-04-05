@@ -16,6 +16,6 @@ public class LoginViewModelFactory extends ViewModelProvider.NewInstanceFactory 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T)new LoginViewModel(loginResultCallbacks);
+        return (T) new LoginViewModel(loginResultCallbacks);
     }
 }

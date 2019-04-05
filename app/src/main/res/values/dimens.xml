@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="etWidth">300dp</dimen>
-    <dimen name="etHeight">50dp</dimen>
+    <dimen name="etHeight">34dp</dimen>
+
+    <dimen name="btnHeight">34dp</dimen>
+    <dimen name="layoutHeightProfile">98dp</dimen>
+    <dimen name="cardHeight">54dp</dimen>
 
     <dimen name="btnWidth">175dp</dimen>
     <dimen name="btnheight">50dp</dimen>
+
+
+
 </resources>

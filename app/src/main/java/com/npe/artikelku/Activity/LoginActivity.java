@@ -43,6 +43,7 @@ public class LoginActivity extends AppCompatActivity implements LoginResultCallb
 
         UserViewModel userViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
 
+        //insert room
         userViewModel.insert(new UserModel(loginModel.getId(), loginModel.getNama(),
                 loginModel.getEmail(), loginModel.getNoHp(), loginModel.getGender(),
                 loginModel.getBank(), loginModel.getNomor_rekening(), loginModel.getNama_rekening()));

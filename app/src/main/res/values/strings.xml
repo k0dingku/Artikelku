@@ -3,4 +3,51 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="nama_bank">
+        <item>Mandiri</item>
+        <item>BCA</item>
+        <item>BNI</item>
+        <item>BRI</item>
+    </string-array>
+
+    <string name="ketentuan_pencairan">Ketentuan pencairan dana</string>
+    <string name="minimum_pencairan">- Minimum pencairan dana adalah Rp 100.000,00</string>
+    <string name="lama_pencairan">- Lama pencairan saldo maksimal 2 hari</string>
+    <string name="pencairan_dana">- Pencairan dana hanya bisa dilakukan 1 kali per hari</string>
+    <string name="masuk_noRekening">Masukkan nomor rekening</string>
+    <string name="jumlah_nominal">Jumlah pencairan</string>
+    <string name="masuk_atasNama">Masukkan nama pemilik rekening</string>
+    <string name="pilih_bank">Pilih bank tujuan</string>
+    <string name="rekening_tujuan">Rekening Tujuan</string>
+    <string name="bank_tujuan">Bank tujuan</string>
+    <string name="no_rek">Nomor rekening</string>
+    <string name="atas_nama">Atas nama</string>
+    <string name="masukkan_password">Masukkan Password Artikelku</string>
+    <string name="masukkan_password_2">password yang dimasukkan adalah password Artikelku, bukan password rekening anda</string>
+    <string name="lupa_password">Lupa password?</string>
+    <string name="uang_diproses">Uang anda akan segera kami proses, tunggu ya 😊</string>
+    <string name="masukkan_email">Masukkan Email</string>
+    <string name="password_dikirim">password baru akan dikirimkan ke email anda</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="ganti_password">Ganti Password</string>
+    <string name="edit_rekening">Edit Rekening</string>
+    <string name="syarat_ketentuan">Syarat dan Ketentuan</string>
+    <string name="logout">Logout</string>
+    <string name="tglUnggah">Tanggal Unggah</string>
+    <string name="status">Status</string>
+    <string name="edit_nama">Nama</string>
+    <string name="edit_email">Edit Email</string>
+    <string name="edit_nomor">Nomor Hp</string>
+    <string name="btnSimpan">Simpan</string>
+    <string name="edit_password_lama">Password lama</string>
+    <string name="edit_password_baru">Password baru</string>
+    <string name="edit_ulangiPasswordBaru">Ulangi password baru</string>
+    <string name="btnGanti">ganti</string>
+    <string name="edit_nama_bank">Nama bank</string>
+    <string name="edit_nomor_rekening">Nomor rekening</string>
+    <string name="edit_namaPemilikRekening">Nama pemilik rekening</string>
+
 </resources>

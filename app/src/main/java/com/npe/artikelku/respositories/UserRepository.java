@@ -12,23 +12,23 @@ public class UserRepository {
     private UserDao userDao;
     private LiveData<UserModel> userData;
 
-    public UserRepository(Application application){
+    public UserRepository(Application application) {
         UserDatabase userDatabase = UserDatabase.getInstance(application);
         userDao = userDatabase.userDao();
-        if(userDao.getAllUser() != null){
+        if (userDao.getAllUser() != null) {
             userData = userDao.getAllUser();
         }
     }
 
-    public LiveData<UserModel> getAllUser(){
+    public LiveData<UserModel> getAllUser() {
         return userData;
     }
 
-    public void insert(UserModel userModel){
+    public void insert(UserModel userModel) {
         new InsertUserAsyncTask(userDao).execute(userModel);
     }
 
-    private static class InsertUserAsyncTask extends AsyncTask<UserModel, Void, Void>{
+    private static class InsertUserAsyncTask extends AsyncTask<UserModel, Void, Void> {
         private UserDao userDao;
 
         public InsertUserAsyncTask(UserDao userDao) {
@@ -42,11 +42,11 @@ public class UserRepository {
         }
     }
 
-    public void update(UserModel userModel){
+    public void update(UserModel userModel) {
         new UpdateUserAsyncTask(userDao).execute(userModel);
     }
 
-    private static class UpdateUserAsyncTask extends AsyncTask<UserModel, Void, Void>{
+    private static class UpdateUserAsyncTask extends AsyncTask<UserModel, Void, Void> {
         private UserDao userDao;
 
         public UpdateUserAsyncTask(UserDao userDao) {
@@ -60,11 +60,11 @@ public class UserRepository {
         }
     }
 
-    public void delete(UserModel userModel){
+    public void delete(UserModel userModel) {
         new DeleteUserAsyncTask(userDao).execute(userModel);
     }
 
-    private static class DeleteUserAsyncTask extends AsyncTask<UserModel, Void, Void>{
+    private static class DeleteUserAsyncTask extends AsyncTask<UserModel, Void, Void> {
         private UserDao userDao;
 
         public DeleteUserAsyncTask(UserDao userDao) {
@@ -78,11 +78,11 @@ public class UserRepository {
         }
     }
 
-    public void deleteAll(){
+    public void deleteAll() {
         new InsertUserAsyncTask(userDao).execute();
     }
 
-    private static class DeleteAllUserAsyncTask extends AsyncTask<Void, Void, Void>{
+    private static class DeleteAllUserAsyncTask extends AsyncTask<Void, Void, Void> {
         private UserDao userDao;
 
         public DeleteAllUserAsyncTask(UserDao userDao) {

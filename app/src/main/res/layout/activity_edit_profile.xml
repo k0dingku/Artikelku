@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBG"
+    tools:context=".Activity.EditProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/edit_nama"
+                android:textColor="@color/colorNavBar"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/et_nama_editProfile"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/etHeight"
+                android:background="@drawable/background_search_view"
+                android:fontFamily="@font/montserrat_light"
+                android:paddingLeft="10dp"
+                android:text="Fachril Zulfidar"
+                android:textColor="@color/colorNavBar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/edit_email"
+                android:textColor="@color/colorNavBar"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/et_email_editProfile"
+                android:layout_width="match_parent"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:layout_height="@dimen/etHeight"
+                android:background="@drawable/background_search_view"
+                android:fontFamily="@font/montserrat_light"
+                android:paddingLeft="10dp"
+                android:text="fachril21@gmail.com"
+                android:textColor="@color/colorNavBar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/edit_nomor"
+                android:textColor="@color/colorNavBar"
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/et_noHp_editProfile"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/etHeight"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:background="@drawable/background_search_view"
+                android:fontFamily="@font/montserrat_light"
+                android:paddingLeft="10dp"
+                android:text="082231211577"
+                android:textColor="@color/colorNavBar" />
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_simpan_editProfile"
+        android:layout_width="@dimen/btnWidth"
+        android:layout_height="@dimen/btnHeight"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/square_red_button"
+        android:gravity="bottom"
+        android:text="@string/btnSimpan"
+        android:textColor="@color/colorFontWhite"
+        android:textAlignment="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        />
+</RelativeLayout>

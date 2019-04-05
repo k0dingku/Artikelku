@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.DompetCairkanFragment"
+    android:background="#F3F2ED">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/rekening_tujuan"
+            android:layout_margin="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="12sp"
+            android:text="@string/pilih_bank"/>
+        <TextView
+            android:id="@+id/et_bankTujuan_DompetCairkan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16sp"
+            android:layout_marginRight="15sp"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:background="@drawable/background_edit_text"
+            android:text="Bank tujuan"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/masuk_noRekening"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="16dp"
+            android:textSize="12sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/et_noRekening_DompetCairkan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16sp"
+            android:layout_marginRight="16sp"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:background="@drawable/background_edit_text"
+            android:text="Nomor rekening"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/masuk_atasNama"/>
+
+        <TextView
+            android:id="@+id/et_atasNamaRekening_DompetCairkan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:background="@drawable/background_edit_text"
+            android:text="Nomor pemilik rekening"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:text="@string/jumlah_nominal"
+            android:fontFamily="@font/montserrat_bold"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"/>
+        <TextView
+            android:id="@+id/et_nominal_DompetCairkan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16sp"
+            android:layout_marginRight="16sp"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:background="@drawable/background_edit_text"
+            android:text="Nominal pencarian"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="12sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/ketentuan_pencairan"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="12sp"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/minimum_pencairan"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginLeft="16dp"
+            android:text="@string/lama_pencairan"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginLeft="16dp"
+            android:text="@string/pencairan_dana"/>
+        <Button
+            android:id="@+id/btn_cairkan_DompetCairkan"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginRight="46dp"
+            android:layout_marginLeft="46dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/background_button"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="cairkan"/>
+    </LinearLayout>
+
+
+
+</FrameLayout>

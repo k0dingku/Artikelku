@@ -12,8 +12,6 @@ import com.npe.artikelku.presenter.LoginResultCallbacks;
 import com.npe.artikelku.respositories.LoginRepository;
 import com.npe.artikelku.utils.Constant;
 
-import java.util.logging.Handler;
-
 public class LoginViewModel extends ViewModel {
     private RequestLogin requestLogin;
     private LoginResultCallbacks loginResultCallbacks;
@@ -89,7 +87,7 @@ public class LoginViewModel extends ViewModel {
     private void sendLoginRequest() {
         String email = requestLogin.getEmail().trim();
         String pass = requestLogin.getPassword().trim();
-        Log.i("EmailPass","Email : "+email + " Pass : "+ pass);
+        Log.i("EmailPass", "Email : " + email + " Pass : " + pass);
         //show progress
         progressDialog.show();
         //login request
@@ -99,7 +97,7 @@ public class LoginViewModel extends ViewModel {
             loginResultCallbacks.onSuccess("Berhasil Login");
             progressDialog.dismiss();
             loginResultCallbacks.dataUser(loginRepository.loginUser(email, pass));
-        } else if(loginRepository.loginUser(email, pass) == null) {
+        } else if (loginRepository.loginUser(email, pass) == null) {
             progressDialog.dismiss();
             loginResultCallbacks.onFailed("Gagal Login");
         }
