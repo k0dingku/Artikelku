@@ -14,8 +14,12 @@
         <activity android:name=".ResetPasswordActivity"></activity>
         <activity android:name=".PasswordCheckActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".Activity.EditRekeningActivity"></activity>
+        <activity android:name=".Activity.GantiPasswordActivity" />
+        <activity android:name=".Activity.EditProfileActivity" />
+        <activity android:name=".Activity.LoginActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

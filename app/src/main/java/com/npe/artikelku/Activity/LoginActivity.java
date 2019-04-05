@@ -1,4 +1,4 @@
-package com.npe.artikelku;
+package com.npe.artikelku.Activity;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.npe.artikelku.R;
 import com.npe.artikelku.viewmodel.LoginViewModel;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {

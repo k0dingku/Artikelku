@@ -31,4 +31,23 @@
     <string name="uang_diproses">Uang anda akan segera kami proses, tunggu ya 😊</string>
     <string name="masukkan_email">Masukkan Email</string>
     <string name="password_dikirim">password baru akan dikirimkan ke email anda</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="ganti_password">Ganti Password</string>
+    <string name="edit_rekening">Edit Rekening</string>
+    <string name="syarat_ketentuan">Syarat dan Ketentuan</string>
+    <string name="logout">Logout</string>
+    <string name="tglUnggah">Tanggal Unggah</string>
+    <string name="status">Status</string>
+    <string name="edit_nama">Nama</string>
+    <string name="edit_email">Edit Email</string>
+    <string name="edit_nomor">Nomor Hp</string>
+    <string name="btnSimpan">Simpan</string>
+    <string name="edit_password_lama">Password lama</string>
+    <string name="edit_password_baru">Password baru</string>
+    <string name="edit_ulangiPasswordBaru">Ulangi password baru</string>
+    <string name="btnGanti">ganti</string>
+    <string name="edit_nama_bank">Nama bank</string>
+    <string name="edit_nomor_rekening">Nomor rekening</string>
+    <string name="edit_namaPemilikRekening">Nama pemilik rekening</string>
+
 </resources>
