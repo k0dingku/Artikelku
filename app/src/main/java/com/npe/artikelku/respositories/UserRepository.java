@@ -79,7 +79,7 @@ public class UserRepository {
     }
 
     public void deleteAll() {
-        new InsertUserAsyncTask(userDao).execute();
+        new DeleteAllUserAsyncTask(userDao).execute();
     }
 
     private static class DeleteAllUserAsyncTask extends AsyncTask<Void, Void, Void> {
