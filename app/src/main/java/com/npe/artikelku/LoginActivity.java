@@ -1,20 +1,20 @@
 package com.npe.artikelku;
 
-import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.npe.artikelku.databinding.ActivityLoginBinding;
 import com.npe.artikelku.model.LoginModel;
+import com.npe.artikelku.model.user.UserModel;
 import com.npe.artikelku.presenter.LoginResultCallbacks;
 import com.npe.artikelku.viewmodel.LoginViewModel;
 import com.npe.artikelku.viewmodel.LoginViewModelFactory;
+import com.npe.artikelku.viewmodel.UserViewModel;
 
 import es.dmoral.toasty.Toasty;
 
@@ -29,13 +29,27 @@ public class LoginActivity extends AppCompatActivity implements LoginResultCallb
     }
 
 
-    @Override
     public void mainAcitivity() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void dataUser(LoginModel loginModel) {
+
+        UserViewModel userViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
+
+        userViewModel.insert(new UserModel(loginModel.getId(), loginModel.getNama(),
+                loginModel.getEmail(), loginModel.getNoHp(), loginModel.getGender(),
+                loginModel.getBank(), loginModel.getNomor_rekening(), loginModel.getNama_rekening()));
+
+        Log.i("DataEmail", loginModel.getEmail());
+
+        //toMain
+        mainAcitivity();
     }
 
     @Override

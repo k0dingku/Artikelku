@@ -49,18 +49,24 @@
                 app:addTextChangedListener="@{loginViewModel.getEmailTextWatcher}" />
 
 
-            <EditText
-                android:id="@+id/etPasswordLogin"
-                android:layout_width="@dimen/etWidth"
-                android:layout_height="@dimen/etHeight"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorGrey"
-                android:drawableLeft="@drawable/ic_lock"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:textColor="@color/colorWhite"
-                android:textColorHint="@color/colorWhite"
-                app:addTextChangedListener="@{loginViewModel.getPasswordTextWatcher}" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/etPasswordLogin"
+                    android:layout_width="@dimen/etWidth"
+                    android:layout_height="@dimen/etHeight"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorGrey"
+                    android:drawableLeft="@drawable/ic_lock"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    app:addTextChangedListener="@{loginViewModel.getPasswordTextWatcher}" />
+            </android.support.design.widget.TextInputLayout>
 
             <Button
                 android:id="@+id/btnLogin"

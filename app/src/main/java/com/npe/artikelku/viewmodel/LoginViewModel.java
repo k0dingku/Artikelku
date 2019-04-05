@@ -1,24 +1,23 @@
 package com.npe.artikelku.viewmodel;
 
 import android.app.ProgressDialog;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 
-import com.npe.artikelku.model.LoginModel;
 import com.npe.artikelku.model.RequestLogin;
 import com.npe.artikelku.presenter.LoginResultCallbacks;
 import com.npe.artikelku.respositories.LoginRepository;
 import com.npe.artikelku.utils.Constant;
 
+import java.util.logging.Handler;
+
 public class LoginViewModel extends ViewModel {
     private RequestLogin requestLogin;
     private LoginResultCallbacks loginResultCallbacks;
     private LoginRepository loginRepository;
-    private LiveData<LoginModel> dataLogin = new MutableLiveData<>();
     private ProgressDialog progressDialog;
 
     public LoginViewModel(LoginResultCallbacks loginResultCallbacks) {
@@ -72,7 +71,6 @@ public class LoginViewModel extends ViewModel {
         if (errorCode == -1) {
             //progress dialog
             progressDialog = Constant.getDialog(view.getContext());
-
             //send and get login data
             sendLoginRequest();
         } else if (errorCode == 0) {
@@ -91,16 +89,17 @@ public class LoginViewModel extends ViewModel {
     private void sendLoginRequest() {
         String email = requestLogin.getEmail().trim();
         String pass = requestLogin.getPassword().trim();
-        //login request
-        dataLogin = loginRepository.loginUser(email, pass);
-
+        Log.i("EmailPass","Email : "+email + " Pass : "+ pass);
         //show progress
         progressDialog.show();
-        if (dataLogin != null) {
-            progressDialog.dismiss();
+        //login request
+        loginRepository.loginUser(email, pass);
+
+        if (loginRepository.loginUser(email, pass) != null) {
             loginResultCallbacks.onSuccess("Berhasil Login");
-            loginResultCallbacks.mainAcitivity();
-        } else {
+            progressDialog.dismiss();
+            loginResultCallbacks.dataUser(loginRepository.loginUser(email, pass));
+        } else if(loginRepository.loginUser(email, pass) == null) {
             progressDialog.dismiss();
             loginResultCallbacks.onFailed("Gagal Login");
         }
