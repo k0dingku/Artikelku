@@ -33,25 +33,31 @@
                 android:textColor="@color/colorGreen"
                 android:textSize="39sp" />
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_email">
 
-            <EditText
-                android:id="@+id/etEmailLogin"
-                android:layout_width="@dimen/etWidth"
-                android:layout_height="@dimen/etHeight"
-                android:layout_marginTop="30dp"
-                android:background="@color/colorGrey"
-                android:drawableLeft="@drawable/ic_email"
-                android:ems="10"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/colorWhite"
-                android:textColorHint="@color/colorWhite"
-                app:addTextChangedListener="@{loginViewModel.getEmailTextWatcher}" />
+                <EditText
+                    android:id="@+id/etEmailLogin"
+                    android:layout_width="@dimen/etWidth"
+                    android:layout_height="@dimen/etHeight"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/colorGrey"
+                    android:ems="10"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    app:addTextChangedListener="@{loginViewModel.getEmailTextWatcher}" />
+
+            </android.support.design.widget.TextInputLayout>
 
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_lock"
                 app:passwordToggleEnabled="true">
 
                 <EditText
@@ -60,12 +66,12 @@
                     android:layout_height="@dimen/etHeight"
                     android:layout_marginTop="10dp"
                     android:background="@color/colorGrey"
-                    android:drawableLeft="@drawable/ic_lock"
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhite"
                     app:addTextChangedListener="@{loginViewModel.getPasswordTextWatcher}" />
+
             </android.support.design.widget.TextInputLayout>
 
             <Button
@@ -79,6 +85,25 @@
                 android:text="@string/login"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@android:color/white" />
+
+
+            <TextView
+                android:justificationMode="inter_word"
+                android:text="@string/register_01"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textAlignment="center"
+                android:layout_width="@dimen/btnWidth"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:justificationMode="inter_word"
+                android:text="@string/register_02"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </RelativeLayout>

@@ -49,5 +49,7 @@
     <string name="edit_nama_bank">Nama bank</string>
     <string name="edit_nomor_rekening">Nomor rekening</string>
     <string name="edit_namaPemilikRekening">Nama pemilik rekening</string>
+    <string name="register_01">Belum memliki akun?</string>
+    <string name="register_02">Silahkan daftarkan akun kamu di sini</string>
 
 </resources>
