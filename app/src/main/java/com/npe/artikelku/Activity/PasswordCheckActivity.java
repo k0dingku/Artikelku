@@ -24,7 +24,7 @@ public class PasswordCheckActivity extends AppCompatActivity {
         setContentView(R.layout.activity_password_check);
         btnSubmit = (Button) findViewById(R.id.btn_submit_cairkanDompet);
         btnOk = (Button) findViewById(R.id.btn_okay_cairkanDompet);
-        tvLupaPassword = (TextView) findViewById(R.id.tv_resetPassword_passwordCheck);
+        tvLupaPassword = (TextView) findViewById(R.id.tv_lupaPassword_passwordCheck);
         tvLupaPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

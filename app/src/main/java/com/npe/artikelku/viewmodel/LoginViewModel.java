@@ -93,6 +93,7 @@ public class LoginViewModel extends ViewModel {
         //login request
         loginRepository.loginUser(email, pass);
 
+
         if (loginRepository.loginUser(email, pass) != null) {
             loginResultCallbacks.onSuccess("Berhasil Login");
             progressDialog.dismiss();

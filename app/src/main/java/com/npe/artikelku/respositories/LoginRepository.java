@@ -25,12 +25,15 @@ public class LoginRepository {
             @Override
             public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
                 if (response.body() != null) {
-                    Log.i("ResponDataLogin", "Masuk");
                     //init data login model
                     if (response.body().getApi_message().equalsIgnoreCase("success")) {
                         data = response.body();
+                        Log.i("ResponDataLogin", "Masuk");
+
                     } else {
                         data = null;
+                        Log.i("ResponDataLogin", "Null");
+
                     }
                 }
             }
