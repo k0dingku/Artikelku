@@ -36,19 +36,23 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_email">
+                android:textColorHint="@color/colorNavBar">
 
                 <EditText
                     android:id="@+id/etEmailLogin"
                     android:layout_width="@dimen/etWidth"
                     android:layout_height="@dimen/etHeight"
                     android:layout_marginTop="30dp"
-                    android:background="@color/colorGrey"
+                    android:background="@drawable/background_search_view"
                     android:ems="10"
                     android:hint="@string/email"
+                    android:paddingLeft="10dp"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/colorWhite"
-                    android:textColorHint="@color/colorWhite"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawableTint="@color/colorNavBar"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/colorNavBar"
+                    android:textColorHint="@color/colorNavBar"
                     app:addTextChangedListener="@{loginViewModel.getEmailTextWatcher}" />
 
             </android.support.design.widget.TextInputLayout>
@@ -57,19 +61,25 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_lock"
-                app:passwordToggleEnabled="true">
+                app:passwordToggleEnabled="true"
+                android:layout_marginTop="5dp"
+                android:textColorHint="@color/colorNavBar"
+                app:passwordToggleTint="@color/colorNavBar">
 
                 <EditText
                     android:id="@+id/etPasswordLogin"
                     android:layout_width="@dimen/etWidth"
                     android:layout_height="@dimen/etHeight"
                     android:layout_marginTop="10dp"
-                    android:background="@color/colorGrey"
+                    android:background="@drawable/background_search_view"
                     android:hint="@string/password"
+                    android:paddingLeft="10dp"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:drawableTint="@color/colorNavBar"
+                    android:drawablePadding="5dp"
                     android:inputType="textPassword"
-                    android:textColor="@color/colorWhite"
-                    android:textColorHint="@color/colorWhite"
+                    android:textColor="@color/colorNavBar"
+                    android:textColorHint="@color/colorNavBar"
                     app:addTextChangedListener="@{loginViewModel.getPasswordTextWatcher}" />
 
             </android.support.design.widget.TextInputLayout>
