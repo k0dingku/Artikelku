@@ -9,7 +9,9 @@
 
     <dimen name="btnWidth">175dp</dimen>
     <dimen name="btnheight">50dp</dimen>
-
+    <dimen name="logoWidth">200dp</dimen>
+    <dimen name="logoHeight">35dp</dimen>
+    <dimen name="textSplash">20dp</dimen>
 
 
 </resources>

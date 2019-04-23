@@ -72,13 +72,13 @@ public class LoginViewModel extends ViewModel {
             //send and get login data
             sendLoginRequest();
         } else if (errorCode == 0) {
-            loginResultCallbacks.onFailed("Empety email");
+            loginResultCallbacks.onFailed("Empty email");
         } else if (errorCode == 1) {
             loginResultCallbacks.onFailed("Email not valid");
         } else if (errorCode == 2) {
-            loginResultCallbacks.onFailed("Empety password");
+            loginResultCallbacks.onFailed("Empty password");
         } else if (errorCode == 3) {
-            loginResultCallbacks.onFailed("pasword must more than 6 character");
+            loginResultCallbacks.onFailed("Password must more than 6 character");
         }
     }
 

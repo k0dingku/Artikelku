@@ -22,7 +22,7 @@
             android:background="@color/colorNavBar">
 
             <TextView
-                android:id="@+id/nama"
+                android:id="@+id/tv_nama_tabProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fachril Rachma Zulfidar"
@@ -30,7 +30,7 @@
                 android:layout_marginBottom="7dp"
                 android:textColor="@color/colorFontWhite"/>
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/tv_email_tabProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="fachril21@gmail.com"
